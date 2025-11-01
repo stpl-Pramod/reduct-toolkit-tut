@@ -3,16 +3,23 @@ import { useDispatch } from "react-redux"
 import Header from "./Header"
 import Product from "./Product"
 import './app.css'
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import CartList from "./CartList"
 // import { clearItem } from "./redux/slice"
 export function App() {
   const dispatch = useDispatch()
   
   return (
     <>
-     {/* <h2>Toolkip app</h2> */}
+    <BrowserRouter>
      <Header />
-     {/* <button onClick={()=>dispatch(clearItem())}>Clear Cart</button> */}
-     <Product />
+     <Routes>
+      <Route path="/" element={<Product/>}></Route>
+      <Route path="/cart" element={<CartList />}></Route>   
+     </Routes>
+    </BrowserRouter>
+     {/* <h2>Toolkip app</h2> */}
+    
     </>
   )
 }
