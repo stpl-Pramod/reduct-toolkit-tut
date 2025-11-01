@@ -10,7 +10,7 @@ const Header = () => {
       <nav className="nav">
         <ul>
             <li>
-               <a href="javascript:void()"><Link to="/">Home</Link></a> 
+               <Link to="/">Home</Link>
             </li>
         </ul>
        
