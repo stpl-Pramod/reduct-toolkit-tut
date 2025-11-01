@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { addItem, } from "./redux/slice";
+import { addItem, removeItem } from "./redux/slice";
 import { useEffect } from "react";
 import { fetchProducts } from "./redux/productSlice";
 import "./product.css"
@@ -26,7 +26,7 @@ const Product = () => {
                 
                 {
                     cartSelector.find(cartItem=>cartItem.id===product.id)?
-                    <button className="btn" disabled>Added in cart</button>
+                    <button className="btn btn-danger" onClick={()=>dispatch(removeItem(product))}>Remove from cart</button>
                     :<button className="btn"  onClick={() => dispatch(addItem(product))}>Add to cart</button>
                 
                 }
